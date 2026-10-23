@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.GeoStampCamera" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorOnPrimary">@color/white_pure</item>
+        <item name="colorPrimaryContainer">#CFF4FA</item>
+        <item name="colorOnPrimaryContainer">@color/brand_primary_dark</item>
+        <item name="colorSecondary">@color/brand_accent</item>
+        <item name="colorOnSecondary">@color/charcoal_900</item>
+        <item name="colorSecondaryContainer">#FFECC2</item>
+        <item name="colorOnSecondaryContainer">#4A2E00</item>
+        <item name="colorTertiary">@color/brand_tertiary</item>
+        <item name="colorOnTertiary">@color/white_pure</item>
+        <item name="colorTertiaryContainer">#EDE2FE</item>
+        <item name="colorOnTertiaryContainer">#4A1EB8</item>
+        <item name="colorError">@color/danger_500</item>
+        <item name="colorErrorContainer">#FDE2E2</item>
+        <item name="colorOnErrorContainer">#8E0F0F</item>
+        <item name="colorSurface">@color/neutral_100</item>
+        <item name="colorOnSurface">@color/charcoal_900</item>
+        <item name="colorSurfaceVariant">@color/neutral_200</item>
+        <item name="colorOnSurfaceVariant">@color/neutral_500</item>
+        <item name="colorOutline">@color/neutral_300</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+
+        <!-- Default global shape appearances so cards/buttons look modern -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.GeoStamp.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.GeoStamp.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.GeoStamp.Large</item>
+    </style>
+
+    <style name="Theme.GeoStampCamera.NoActionBar" parent="Theme.GeoStampCamera" />
+
+    <style name="Theme.GeoStampCamera.NoActionBar.Splash">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="Theme.GeoStampCamera.Camera" parent="Theme.GeoStampCamera">
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="Widget.GeoStamp.Button.Primary" parent="Widget.Material3.Button">
+        <item name="cornerRadius">26dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="rippleColor">#55FFFFFF</item>
+        <item name="elevation">2dp</item>
+    </style>
+
+    <style name="Widget.GeoStamp.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">@dimen/radius_lg</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.GeoStamp.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_card</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="contentPadding">@dimen/spacing_lg</item>
+    </style>
+
+    <style name="Widget.GeoStamp.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipCornerRadius">14dp</item>
+    </style>
+
+    <!-- Text -->
+    <style name="TextAppearance.GeoStamp.Display" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.GeoStamp.Headline" parent="TextAppearance.Material3.HeadlineSmall" />
+    <style name="TextAppearance.GeoStamp.Title" parent="TextAppearance.Material3.TitleMedium" />
+    <style name="TextAppearance.GeoStamp.Body" parent="TextAppearance.Material3.BodyMedium" />
+    <style name="TextAppearance.GeoStamp.Caption" parent="TextAppearance.Material3.BodySmall" />
+
+    <!-- Camera control button (always white icon over the dark camera scrim) -->
+    <style name="Widget.GeoStamp.CameraControl" parent="">
+        <item name="android:layout_width">@dimen/camera_control_touch</item>
+        <item name="android:layout_height">@dimen/camera_control_touch</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">@color/white_pure</item>
+        <item name="tint">@color/white_pure</item>
+    </style>
+
+    <!-- Custom bottom nav styles (see res/layout/view_bottom_nav_bar.xml).
+         Side slots: vertical pill+icon+label. Center camera slot gets a raised FAB
+         treatment (bigger, elevated, always lit). -->
+    <style name="Widget.GeoStamp.BottomNavItem" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Center camera tab: no vertical padding so the FAB can push upward via margin,
+         clip disabled so the glow halo extends outside the row. -->
+    <style name="Widget.GeoStamp.BottomNavItem.Camera" parent="Widget.GeoStamp.BottomNavItem">
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:clipChildren">false</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="Widget.GeoStamp.BottomNavPill" parent="">
+        <item name="android:layout_width">52dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+
+    <!-- Camera FAB: 56dp gradient circle with glow halo and elevation. Big enough to
+         be visually prominent even without pushing above the bar. -->
+    <style name="Widget.GeoStamp.BottomNavPill.Camera" parent="">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/bg_nav_camera_fab</item>
+        <item name="android:elevation">10dp</item>
+    </style>
+
+    <style name="Widget.GeoStamp.BottomNavIcon" parent="">
+        <item name="android:layout_width">22dp</item>
+        <item name="android:layout_height">22dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:tint">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="Widget.GeoStamp.BottomNavIcon.Camera" parent="">
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:tint">@color/white_pure</item>
+    </style>
+
+    <style name="Widget.GeoStamp.BottomNavText" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <!-- Dark popup for the photo viewer overflow menu. Icons stay white, text stays white,
+         background is dark surface so the menu items are legible against a light app theme. -->
+    <style name="ThemeOverlay.GeoStamp.DarkPopup" parent="ThemeOverlay.Material3.Dark">
+        <item name="colorSurface">#1E1E1E</item>
+        <item name="colorOnSurface">@color/white_pure</item>
+        <item name="android:colorBackground">#1E1E1E</item>
+        <item name="android:textColorPrimary">@color/white_pure</item>
+        <item name="android:textColorSecondary">#CCFFFFFF</item>
+    </style>
+
+    <!-- Shape appearances — unified rounded corner language -->
+    <style name="ShapeAppearance.GeoStamp.Small" parent="ShapeAppearance.Material3.Corner.Small">
+        <item name="cornerSize">12dp</item>
+    </style>
+    <style name="ShapeAppearance.GeoStamp.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerSize">18dp</item>
+    </style>
+    <style name="ShapeAppearance.GeoStamp.Large" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <!-- Report quick-action rows -->
+    <style name="Widget.GeoStamp.ReportQuickRow" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">@dimen/spacing_lg</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="Widget.GeoStamp.ReportQuickIcon" parent="">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:tint">?attr/colorPrimary</item>
+    </style>
+    <style name="Widget.GeoStamp.ReportQuickText" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginStart">@dimen/spacing_md</item>
+    </style>
+    <style name="Widget.GeoStamp.ReportQuickTitle" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.GeoStamp.Title</item>
+    </style>
+    <style name="Widget.GeoStamp.ReportQuickSummary" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textAppearance">@style/TextAppearance.GeoStamp.Caption</item>
+    </style>
+
+    <!-- Camera chip (zoom pills, mode selector, photo viewer tabs).
+         Unchecked: white outline + white text on transparent fill.
+         Checked: solid amber fill with dark text.
+         The toggle group updates each child button's android:state_checked so the color
+         state lists resolve correctly. -->
+    <style name="Widget.GeoStamp.CameraChip" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/camera_chip_text</item>
+        <item name="strokeColor">@color/camera_chip_stroke</item>
+        <item name="backgroundTint">@color/camera_chip_bg</item>
+        <item name="rippleColor">#55FFFFFF</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="iconTint">@color/camera_chip_text</item>
+    </style>
+
+</resources>

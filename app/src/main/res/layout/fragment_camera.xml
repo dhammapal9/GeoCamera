@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cameraRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:scaleType="fillCenter"
+        app:implementationMode="performance" />
+
+    <com.idp.geostampcamera.ui.camera.GridOverlayView
+        android:id="@+id/gridOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/previewView"
+        app:layout_constraintBottom_toBottomOf="@id/previewView"
+        app:layout_constraintStart_toStartOf="@id/previewView"
+        app:layout_constraintEnd_toEndOf="@id/previewView" />
+
+    <com.idp.geostampcamera.ui.camera.LevelOverlayView
+        android:id="@+id/levelOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/previewView"
+        app:layout_constraintBottom_toBottomOf="@id/previewView"
+        app:layout_constraintStart_toStartOf="@id/previewView"
+        app:layout_constraintEnd_toEndOf="@id/previewView" />
+
+    <!-- TOP BAR — rounded pill, status label under each icon -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_camera_top_pill"
+        android:paddingHorizontal="@dimen/spacing_sm"
+        android:paddingTop="@dimen/spacing_xs"
+        android:paddingBottom="@dimen/spacing_xs"
+        android:layout_marginHorizontal="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:gravity="center_vertical"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout android:id="@+id/btnGridWrap"
+            android:layout_width="52dp" android:layout_height="52dp">
+            <ImageView android:id="@+id/btnGridIndicator"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_camera_control_active"
+                android:visibility="invisible" />
+            <ImageButton android:id="@+id/btnGrid"
+                style="@style/Widget.GeoStamp.CameraControl"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:padding="7dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_grid"
+                android:tint="@color/white_pure"
+                android:contentDescription="@string/camera_grid" />
+            <TextView android:id="@+id/btnGridLabel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/camera_grid"
+                android:textColor="#CCFFFFFF"
+                android:textSize="9sp"
+                android:maxLines="1"
+                android:includeFontPadding="false" />
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/btnFlashWrap"
+            android:layout_width="52dp" android:layout_height="52dp">
+            <ImageView android:id="@+id/btnFlashIndicator"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_camera_control_active"
+                android:visibility="invisible" />
+            <ImageButton android:id="@+id/btnFlash"
+                style="@style/Widget.GeoStamp.CameraControl"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:padding="7dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_flash_off"
+                android:tint="@color/white_pure"
+                android:contentDescription="@string/camera_flash" />
+            <TextView android:id="@+id/btnFlashLabel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/camera_flash_off"
+                android:textColor="#CCFFFFFF"
+                android:textSize="9sp"
+                android:maxLines="1"
+                android:includeFontPadding="false" />
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/btnTimerWrap"
+            android:layout_width="52dp" android:layout_height="52dp">
+            <ImageView android:id="@+id/btnTimerIndicator"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_camera_control_active"
+                android:visibility="invisible" />
+            <ImageButton android:id="@+id/btnTimer"
+                style="@style/Widget.GeoStamp.CameraControl"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:padding="7dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_timer"
+                android:tint="@color/white_pure"
+                android:contentDescription="@string/camera_timer" />
+            <TextView android:id="@+id/btnTimerLabel"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/camera_timer_off"
+                android:textColor="#CCFFFFFF"
+                android:textSize="9sp"
+                android:maxLines="1"
+                android:includeFontPadding="false" />
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/btnTemplateWrap"
+            android:layout_width="52dp" android:layout_height="52dp">
+            <ImageButton android:id="@+id/btnTemplate"
+                style="@style/Widget.GeoStamp.CameraControl"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:padding="7dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_templates"
+                android:tint="@color/white_pure"
+                android:contentDescription="@string/camera_template" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/camera_template"
+                android:textColor="#CCFFFFFF"
+                android:textSize="9sp"
+                android:maxLines="1"
+                android:includeFontPadding="false" />
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/btnToolsWrap"
+            android:layout_width="52dp" android:layout_height="52dp">
+            <ImageView android:id="@+id/btnToolsIndicator"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/bg_camera_control_active"
+                android:visibility="invisible" />
+            <ImageButton android:id="@+id/btnTools"
+                style="@style/Widget.GeoStamp.CameraControl"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:padding="7dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_more"
+                android:tint="@color/white_pure"
+                android:contentDescription="@string/camera_more_tools" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/camera_more_tools"
+                android:textColor="#CCFFFFFF"
+                android:textSize="9sp"
+                android:maxLines="1"
+                android:includeFontPadding="false" />
+        </FrameLayout>
+
+        <FrameLayout android:id="@+id/btnSettingsWrap"
+            android:layout_width="52dp" android:layout_height="52dp">
+            <ImageButton android:id="@+id/btnSettings"
+                style="@style/Widget.GeoStamp.CameraControl"
+                android:layout_width="36dp" android:layout_height="36dp"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="2dp"
+                android:padding="7dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_settings"
+                android:tint="@color/white_pure"
+                android:contentDescription="@string/settings_title" />
+            <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:text="@string/settings_title"
+                android:textColor="#CCFFFFFF"
+                android:textSize="9sp"
+                android:maxLines="1"
+                android:includeFontPadding="false" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Expanded tool rail (appears under top bar) -->
+    <LinearLayout
+        android:id="@+id/toolRail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E6000000"
+        android:paddingVertical="@dimen/spacing_md"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="12dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include android:id="@+id/toolAspect" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            <include android:id="@+id/toolMirror" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            <include android:id="@+id/toolSound" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include android:id="@+id/toolLevel" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            <include android:id="@+id/toolResolution" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            <include android:id="@+id/toolWhiteBalance" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <include android:id="@+id/toolAddText" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            <include android:id="@+id/toolFileName" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            <include android:id="@+id/toolReport" layout="@layout/view_camera_tool_tile"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Recording indicator: red pulsing dot + REC + mm:ss -->
+    <LinearLayout
+        android:id="@+id/recIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_rec_pill"
+        android:paddingHorizontal="@dimen/spacing_md"
+        android:paddingVertical="@dimen/spacing_xs"
+        android:visibility="gone"
+        android:elevation="6dp"
+        android:layout_margin="@dimen/spacing_md"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <View
+            android:id="@+id/recDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/ic_rec_dot" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_sm"
+            android:text="@string/camera_rec_label"
+            android:textColor="@color/white_pure"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+        <TextView
+            android:id="@+id/recElapsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_sm"
+            android:text="@string/camera_rec_time_default"
+            android:textColor="@color/white_pure"
+            android:textSize="12sp"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <!-- REPORT mode persistent badge -->
+    <TextView
+        android:id="@+id/reportBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/spacing_sm"
+        android:paddingVertical="@dimen/spacing_xs"
+        android:text="@string/report_mode_badge"
+        android:textColor="@color/charcoal_900"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        android:background="@color/brand_accent"
+        android:elevation="4dp"
+        android:visibility="gone"
+        android:layout_margin="@dimen/spacing_md"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Status chip (location) -->
+    <TextView
+        android:id="@+id/locationStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/spacing_md"
+        android:paddingVertical="@dimen/spacing_xs"
+        android:drawableStart="@drawable/ic_location"
+        android:drawableTint="@color/brand_accent"
+        android:drawablePadding="@dimen/spacing_xs"
+        android:gravity="center_vertical"
+        android:text="@string/camera_location_waiting"
+        android:textColor="@color/white_pure"
+        android:textSize="12sp"
+        android:background="@drawable/bg_camera_status_pill"
+        android:maxWidth="220dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/timerCountdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:paddingVertical="@dimen/spacing_sm"
+        android:text=""
+        android:visibility="gone"
+        android:textColor="@color/white_pure"
+        android:textAppearance="@style/TextAppearance.GeoStamp.Display"
+        android:background="@drawable/bg_stamp_card"
+        app:layout_constraintTop_toTopOf="@id/previewView"
+        app:layout_constraintBottom_toBottomOf="@id/previewView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Exposure (brightness) vertical strip on the right side -->
+    <LinearLayout
+        android:id="@+id/exposureStrip"
+        android:layout_width="56dp"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_stamp_card"
+        android:paddingVertical="@dimen/spacing_sm"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_lg">
+
+        <!-- + TAP TO BRIGHTEN -->
+        <TextView
+            android:id="@+id/exposurePlus"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="@color/brand_accent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/exposureValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 EV"
+            android:textColor="@color/white_pure"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="@dimen/spacing_xs" />
+
+        <com.idp.geostampcamera.ui.camera.BrightnessBar
+            android:id="@+id/exposureBar"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginVertical="@dimen/spacing_xs" />
+
+        <!-- - TAP TO DARKEN -->
+        <TextView
+            android:id="@+id/exposureMinus"
+            android:layout_width="40dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="–"
+            android:textColor="#AAFFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="?selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Ad banner (always takes layout space so bottom-inset padding keeps the shutter
+         clear of the system nav. Height is 0 + padding when no ad is loaded.) -->
+    <FrameLayout
+        android:id="@+id/adContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- BOTTOM CONTAINER - everything from zoom down -->
+    <LinearLayout
+        android:id="@+id/bottomContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_camera_bottom_scrim"
+        app:layout_constraintBottom_toTopOf="@id/adContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Zoom pill chips -->
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/zoomGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_sm"
+            app:singleSelection="true">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/zoom05"
+                style="@style/Widget.GeoStamp.CameraChip"
+                android:layout_width="44dp"
+                android:layout_height="36dp"
+                android:text="0.5x"
+                android:visibility="gone"
+                android:paddingHorizontal="0dp"
+                android:minWidth="0dp"
+                android:textSize="11sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/zoom1"
+                style="@style/Widget.GeoStamp.CameraChip"
+                android:layout_width="44dp"
+                android:layout_height="36dp"
+                android:text="1x"
+                android:paddingHorizontal="0dp"
+                android:minWidth="0dp"
+                android:textSize="11sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/zoom2"
+                style="@style/Widget.GeoStamp.CameraChip"
+                android:layout_width="44dp"
+                android:layout_height="36dp"
+                android:text="2x"
+                android:paddingHorizontal="0dp"
+                android:minWidth="0dp"
+                android:textSize="11sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/zoom5"
+                style="@style/Widget.GeoStamp.CameraChip"
+                android:layout_width="44dp"
+                android:layout_height="36dp"
+                android:text="5x"
+                android:visibility="gone"
+                android:paddingHorizontal="0dp"
+                android:minWidth="0dp"
+                android:textSize="11sp" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Stamp preview -->
+        <com.idp.geostampcamera.ui.common.StampPreviewView
+            android:id="@+id/stampPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_md"
+            android:layout_marginTop="@dimen/spacing_sm" />
+
+        <!-- Mode selector: PHOTO / VIDEO / REPORTS -->
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/modeSelector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/spacing_sm"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/modePhoto"
+                style="@style/Widget.GeoStamp.CameraChip"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="@string/camera_mode_photo"
+                android:minWidth="0dp"
+                android:textSize="12sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/modeVideo"
+                style="@style/Widget.GeoStamp.CameraChip"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="@string/camera_mode_video"
+                android:minWidth="0dp"
+                android:textSize="12sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/modeReports"
+                style="@style/Widget.GeoStamp.CameraChip"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="@string/camera_mode_reports"
+                android:minWidth="0dp"
+                android:textSize="12sp" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <!-- Bottom controls row -->
+        <LinearLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/spacing_sm"
+            android:paddingTop="@dimen/spacing_sm"
+            android:paddingBottom="@dimen/spacing_md"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton android:id="@+id/btnGallery"
+                    style="@style/Widget.GeoStamp.CameraControl"
+                    android:src="@drawable/ic_gallery"
+                    android:tint="@color/white_pure"
+                    android:contentDescription="@string/nav_gallery" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/nav_gallery"
+                    android:textColor="@color/white_pure"
+                    android:textSize="9sp"
+                android:maxLines="1"
+                android:ellipsize="end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton android:id="@+id/btnLocationPicker"
+                    style="@style/Widget.GeoStamp.CameraControl"
+                    android:src="@drawable/ic_location"
+                    android:tint="@color/white_pure"
+                    android:contentDescription="@string/camera_location_manual" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/camera_location_manual"
+                    android:textColor="@color/white_pure"
+                    android:textSize="10sp"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="@dimen/camera_shutter_size"
+                android:layout_height="@dimen/camera_shutter_size">
+                <ImageButton
+                    android:id="@+id/btnCapture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_shutter"
+                    android:scaleType="centerInside"
+                    android:src="@android:color/transparent"
+                    android:contentDescription="@string/cd_capture_button" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton android:id="@+id/btnSwitch"
+                    style="@style/Widget.GeoStamp.CameraControl"
+                    android:src="@drawable/ic_switch_camera"
+                    android:tint="@color/white_pure"
+                    android:contentDescription="@string/camera_switch" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/camera_switch"
+                    android:textColor="@color/white_pure"
+                    android:textSize="9sp"
+                android:maxLines="1"
+                android:ellipsize="end" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton android:id="@+id/btnTemplates2"
+                    style="@style/Widget.GeoStamp.CameraControl"
+                    android:src="@drawable/ic_templates"
+                    android:tint="@color/white_pure"
+                    android:contentDescription="@string/camera_template" />
+                <TextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/camera_template"
+                    android:textColor="@color/white_pure"
+                    android:textSize="9sp"
+                android:maxLines="1"
+                android:ellipsize="end" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/captureProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminateTint="@color/brand_accent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Permission rationale overlay -->
+    <LinearLayout
+        android:id="@+id/permissionState"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/spacing_xl"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:layout_width="64dp" android:layout_height="64dp"
+            android:src="@drawable/ic_camera"
+            android:tint="@color/brand_accent"
+            android:contentDescription="@null" />
+        <TextView
+            android:id="@+id/permissionTitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/perm_camera_title"
+            android:textColor="@color/white_pure"
+            android:textAppearance="@style/TextAppearance.GeoStamp.Headline" />
+        <TextView
+            android:id="@+id/permissionBody"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:gravity="center"
+            android:text="@string/perm_camera_rationale"
+            android:textColor="#CCFFFFFF"
+            android:textAppearance="@style/TextAppearance.GeoStamp.Body" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPermissionGrant"
+            style="@style/Widget.GeoStamp.Button.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/perm_grant" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

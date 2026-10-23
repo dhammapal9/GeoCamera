@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- white_pure and black_pure are LITERAL colors and must NOT be overridden here.
+         Only neutrals and brand gradient stops shift for dark mode. -->
+    <color name="neutral_100">#141921</color>
+    <color name="neutral_200">#1A2130</color>
+    <color name="neutral_300">#293041</color>
+    <color name="neutral_400">#8B95A5</color>
+    <color name="neutral_500">#C7D0DB</color>
+
+    <!-- Slightly brighter brand hues in dark mode for better pop on dark surfaces -->
+    <color name="brand_primary">#22D3EE</color>
+    <color name="brand_primary_light">#5CECF8</color>
+    <color name="brand_tertiary">#A78BFA</color>
+
+    <!-- Dark-mode hero gradient -->
+    <color name="gradient_hero_start">#0E7490</color>
+    <color name="gradient_hero_end">#7C3AED</color>
+    <color name="gradient_sunset_start">#B45309</color>
+    <color name="gradient_sunset_end">#BE185D</color>
+</resources>

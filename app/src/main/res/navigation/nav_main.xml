@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.idp.geostampcamera.ui.home.HomeFragment"
+        android:label="@string/nav_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.idp.geostampcamera.ui.camera.CameraFragment"
+        android:label="@string/nav_camera"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.idp.geostampcamera.ui.gallery.GalleryFragment"
+        android:label="@string/nav_gallery"
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_gallery_to_photoViewer"
+            app:destination="@id/photoViewerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapViewFragment"
+        android:name="com.idp.geostampcamera.ui.mapview.MapViewFragment"
+        android:label="@string/nav_map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/templatesFragment"
+        android:name="com.idp.geostampcamera.ui.templates.TemplatesFragment"
+        android:label="@string/nav_templates"
+        tools:layout="@layout/fragment_templates">
+        <action
+            android:id="@+id/action_templates_to_editor"
+            app:destination="@id/templateEditorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/templateEditorFragment"
+        android:name="com.idp.geostampcamera.ui.editor.TemplateEditorFragment"
+        android:label="@string/editor_title"
+        tools:layout="@layout/fragment_template_editor">
+        <argument
+            android:name="templateId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photoViewerFragment"
+        android:name="com.idp.geostampcamera.ui.photo.PhotoViewerFragment"
+        android:label=""
+        tools:layout="@layout/fragment_photo_viewer">
+        <argument android:name="photoId" app:argType="long" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.idp.geostampcamera.ui.settings.SettingsFragment"
+        android:label="@string/settings_title"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/qrFragment"
+        android:name="com.idp.geostampcamera.ui.qr.QrScannerFragment"
+        android:label="@string/qr_title"
+        tools:layout="@layout/fragment_qr_scanner" />
+
+    <fragment
+        android:id="@+id/locationPickerFragment"
+        android:name="com.idp.geostampcamera.ui.location.LocationPickerFragment"
+        android:label="@string/location_picker_title"
+        tools:layout="@layout/fragment_location_picker" />
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.idp.geostampcamera.ui.onboarding.OnboardingFragment"
+        android:label=""
+        tools:layout="@layout/fragment_onboarding" />
+
+    <fragment
+        android:id="@+id/permissionsFragment"
+        android:name="com.idp.geostampcamera.ui.onboarding.PermissionsFragment"
+        android:label="@string/perm_screen_title"
+        tools:layout="@layout/fragment_permissions" />
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.idp.geostampcamera.ui.onboarding.LanguageFragment"
+        android:label="@string/settings_language"
+        tools:layout="@layout/fragment_language" />
+
+    <fragment
+        android:id="@+id/filenameFragment"
+        android:name="com.idp.geostampcamera.ui.filename.FilenameBuilderFragment"
+        android:label="@string/camera_file_name"
+        tools:layout="@layout/fragment_filename" />
+
+    <fragment
+        android:id="@+id/savedLocationsFragment"
+        android:name="com.idp.geostampcamera.ui.location.SavedLocationsFragment"
+        android:label="@string/saved_locations_title"
+        tools:layout="@layout/fragment_saved_locations" />
+
+    <fragment
+        android:id="@+id/paywallFragment"
+        android:name="com.idp.geostampcamera.ui.paywall.PaywallFragment"
+        android:label="@string/paywall_title"
+        tools:layout="@layout/fragment_paywall" />
+
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.idp.geostampcamera.ui.settings.HelpFragment"
+        android:label="@string/settings_help"
+        tools:layout="@layout/fragment_help" />
+
+    <action
+        android:id="@+id/action_global_cameraFragment"
+        app:destination="@id/cameraFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_settings"
+        app:destination="@id/settingsFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_templates"
+        app:destination="@id/templatesFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_qr"
+        app:destination="@id/qrFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_gallery"
+        app:destination="@id/galleryFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_locationPicker"
+        app:destination="@id/locationPickerFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_mapView"
+        app:destination="@id/mapViewFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_onboarding"
+        app:destination="@id/onboardingFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit" />
+    <action
+        android:id="@+id/action_global_permissions"
+        app:destination="@id/permissionsFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit" />
+    <action
+        android:id="@+id/action_global_language"
+        app:destination="@id/languageFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_filename"
+        app:destination="@id/filenameFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_savedLocations"
+        app:destination="@id/savedLocationsFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_paywall"
+        app:destination="@id/paywallFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+    <action
+        android:id="@+id/action_global_help"
+        app:destination="@id/helpFragment"
+        app:enterAnim="@anim/nav_enter"
+        app:exitAnim="@anim/nav_exit"
+        app:popEnterAnim="@anim/nav_pop_enter"
+        app:popExitAnim="@anim/nav_pop_exit" />
+</navigation>

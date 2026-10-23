@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand (modern vibrant teal + warm amber + soft violet) -->
+    <color name="brand_primary">#0891B2</color>
+    <color name="brand_primary_dark">#065F75</color>
+    <color name="brand_primary_light">#22D3EE</color>
+    <color name="brand_accent">#F59E0B</color>
+    <color name="brand_accent_dark">#B37207</color>
+    <color name="brand_accent_light">#FBBF24</color>
+    <color name="brand_tertiary">#8B5CF6</color>
+    <color name="brand_tertiary_light">#A78BFA</color>
+
+    <!-- Neutrals -->
+    <color name="charcoal_900">#0A0E13</color>
+    <color name="charcoal_800">#111621</color>
+    <color name="charcoal_700">#1A2130</color>
+    <color name="charcoal_600">#242D3D</color>
+    <color name="charcoal_500">#38425A</color>
+    <color name="neutral_100">#FAFBFC</color>
+    <color name="neutral_200">#F0F3F7</color>
+    <color name="neutral_300">#D5DAE2</color>
+    <color name="neutral_400">#8B95A5</color>
+    <color name="neutral_500">#5A6472</color>
+    <color name="white_pure">#FFFFFF</color>
+    <color name="black_pure">#000000</color>
+
+    <!-- Status -->
+    <color name="success_500">#10B981</color>
+    <color name="warning_500">#F59E0B</color>
+    <color name="danger_500">#DC2626</color>
+
+    <!-- Camera overlay surfaces -->
+    <color name="camera_overlay_scrim">#99000000</color>
+    <color name="camera_stamp_bg">#B2000000</color>
+    <color name="camera_stamp_text">#FFFFFFFF</color>
+
+    <!-- Hero gradient stops (used by drawables) -->
+    <color name="gradient_hero_start">#0891B2</color>
+    <color name="gradient_hero_end">#8B5CF6</color>
+    <color name="gradient_sunset_start">#F59E0B</color>
+    <color name="gradient_sunset_end">#EC4899</color>
+</resources>

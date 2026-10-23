@@ -1,0 +1,5 @@
+## Rename to local.properties and provide your own values.
+## local.properties MUST NOT be committed.
+sdk.dir=/path/to/Android/Sdk
+MAPS_API_KEY=AIzaSyA8kdjZBM0lVcjS9byaHbEYgEm3R21LQBI
+ADMOB_APP_ID=ca-app-pub-3940256099942544~3347511713

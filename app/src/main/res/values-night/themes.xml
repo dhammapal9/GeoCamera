@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.GeoStampCamera" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorOnPrimary">@color/charcoal_900</item>
+        <item name="colorPrimaryContainer">#124956</item>
+        <item name="colorOnPrimaryContainer">#9EEFFC</item>
+        <item name="colorSecondary">@color/brand_accent_light</item>
+        <item name="colorOnSecondary">@color/charcoal_900</item>
+        <item name="colorSecondaryContainer">#7A4A00</item>
+        <item name="colorOnSecondaryContainer">#FFE0A0</item>
+        <item name="colorTertiary">@color/brand_tertiary_light</item>
+        <item name="colorOnTertiary">@color/charcoal_900</item>
+        <item name="colorTertiaryContainer">#3F1B9E</item>
+        <item name="colorOnTertiaryContainer">#E6D9FE</item>
+        <item name="colorError">#F87171</item>
+        <item name="colorErrorContainer">#5E1515</item>
+        <item name="colorOnErrorContainer">#FBD5D5</item>
+        <item name="colorSurface">@color/charcoal_900</item>
+        <item name="colorOnSurface">#F2F4F7</item>
+        <item name="colorSurfaceVariant">@color/charcoal_700</item>
+        <item name="colorOnSurfaceVariant">#C7D0DB</item>
+        <item name="colorOutline">@color/charcoal_500</item>
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+    </style>
+</resources>

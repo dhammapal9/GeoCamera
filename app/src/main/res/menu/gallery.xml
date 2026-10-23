@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_toggle_view"
+        android:icon="@drawable/ic_grid"
+        android:title="@string/gallery_view_grid"
+        android:showAsAction="always" />
+    <item android:id="@+id/action_sort"
+        android:icon="@drawable/ic_more"
+        android:title="@string/gallery_sort"
+        android:showAsAction="always" />
+</menu>

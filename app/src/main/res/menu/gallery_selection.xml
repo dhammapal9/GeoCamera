@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_selection_select_all"
+        android:icon="@drawable/ic_check"
+        android:title="@string/gallery_select_all"
+        app:showAsAction="ifRoom"
+        app:iconTint="?attr/colorOnPrimary" />
+    <item
+        android:id="@+id/action_selection_delete"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/common_delete"
+        app:showAsAction="ifRoom"
+        app:iconTint="?attr/colorOnPrimary" />
+</menu>

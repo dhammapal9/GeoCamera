@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="com.google.android.material.card.MaterialCardView">
+
+    <LinearLayout
+        android:id="@+id/stampRoot"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_sm"
+        android:background="@drawable/bg_stamp_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/mapHolder"
+            android:layout_width="@dimen/stamp_map_default"
+            android:layout_height="@dimen/stamp_map_default"
+            android:background="@drawable/bg_map_placeholder"
+            android:clipChildren="true"
+            android:clipToPadding="true">
+            <ImageView
+                android:id="@+id/mapThumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cd_map_thumbnail"
+                android:scaleType="fitCenter" />
+            <ImageView
+                android:id="@+id/mapPin"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_location"
+                android:tint="@color/brand_accent"
+                android:elevation="2dp"
+                android:contentDescription="@null" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/spacing_sm"
+            android:paddingEnd="@dimen/spacing_xs">
+            <ImageView
+                android:id="@+id/stampLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_gravity="end"
+                android:adjustViewBounds="true"
+                android:scaleType="fitEnd"
+                android:visibility="gone"
+                android:contentDescription="@null" />
+            <TextView
+                android:id="@+id/stampShortAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/white_pure"
+                android:textStyle="bold"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/stampFullAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="#DDFFFFFF"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/stampCoords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DDFFFFFF"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/stampTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DDFFFFFF"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/stampExtras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#CCFFFFFF"
+                android:textSize="10sp" />
+            <TextView
+                android:id="@+id/stampNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#AAFFFFFF"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</merge>

@@ -1,0 +1,52 @@
+package com.idp.geostampcamera.data.local
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "templates")
+data class TemplateEntity(
+    @PrimaryKey val id: String,
+    val name: String,
+    val type: String,
+    val layout: String,
+    val backgroundArgb: Int,
+    val backgroundAlpha: Int,
+    val textArgb: Int,
+    val accentArgb: Int,
+    val fontScale: Float,
+    val cornerRadiusDp: Int,
+    val borderDp: Int,
+    val borderArgb: Int,
+    val mapSize: String,
+    val coordinateFormat: String,
+    val dateFormat: String,
+    val timeFormat: String,
+    val timezoneId: String?,
+    val tempUnit: String,
+    val altitudeUnit: String,
+    val showMap: Boolean,
+    val showShortAddress: Boolean,
+    val showFullAddress: Boolean,
+    val showCoordinates: Boolean,
+    val showPlusCode: Boolean,
+    val showDateTime: Boolean,
+    val showAltitude: Boolean,
+    val showAccuracy: Boolean,
+    val showSpeed: Boolean,
+    val showBearing: Boolean,
+    val showCompass: Boolean,
+    val showMagnetic: Boolean,
+    val showWeather: Boolean,
+    val showLogo: Boolean,
+    val showNote: Boolean,
+    val note: String,
+    val hashtag: String,
+    val projectName: String,
+    val businessName: String,
+    val reference: String,
+    val logoUri: String?,
+    val isBuiltIn: Boolean,
+    val fontFamily: String = "SANS",
+    val fieldOrder: String = "",
+    val updatedAtMillis: Long
+)

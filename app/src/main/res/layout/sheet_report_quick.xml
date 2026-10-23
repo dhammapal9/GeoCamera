@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/spacing_lg">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:background="?attr/colorOnSurfaceVariant"
+        android:alpha="0.5" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:layout_marginTop="@dimen/spacing_md">
+        <TextView
+            android:text="@string/report_quick_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.GeoStamp.Headline" />
+        <TextView
+            android:text="@string/report_mode_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/spacing_sm"
+            android:paddingVertical="@dimen/spacing_xs"
+            android:background="@color/brand_accent"
+            android:textColor="@color/charcoal_900"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/report_quick_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/spacing_lg"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textAppearance="@style/TextAppearance.GeoStamp.Body" />
+
+    <LinearLayout
+        android:id="@+id/quickNew"
+        style="@style/Widget.GeoStamp.ReportQuickRow">
+        <ImageView style="@style/Widget.GeoStamp.ReportQuickIcon" android:src="@drawable/ic_report" />
+        <LinearLayout style="@style/Widget.GeoStamp.ReportQuickText">
+            <TextView android:text="@string/report_quick_new"
+                style="@style/Widget.GeoStamp.ReportQuickTitle" />
+            <TextView android:text="@string/report_quick_new_summary"
+                style="@style/Widget.GeoStamp.ReportQuickSummary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quickLastOpen"
+        style="@style/Widget.GeoStamp.ReportQuickRow">
+        <ImageView style="@style/Widget.GeoStamp.ReportQuickIcon" android:src="@drawable/ic_gallery" />
+        <LinearLayout style="@style/Widget.GeoStamp.ReportQuickText">
+            <TextView android:text="@string/report_quick_last_open"
+                style="@style/Widget.GeoStamp.ReportQuickTitle" />
+            <TextView android:text="@string/report_quick_last_open_summary"
+                style="@style/Widget.GeoStamp.ReportQuickSummary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quickLastShare"
+        style="@style/Widget.GeoStamp.ReportQuickRow">
+        <ImageView style="@style/Widget.GeoStamp.ReportQuickIcon" android:src="@drawable/ic_share" />
+        <LinearLayout style="@style/Widget.GeoStamp.ReportQuickText">
+            <TextView android:text="@string/report_quick_last_share"
+                style="@style/Widget.GeoStamp.ReportQuickTitle" />
+            <TextView android:text="@string/report_quick_last_share_summary"
+                style="@style/Widget.GeoStamp.ReportQuickSummary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quickLastEmail"
+        style="@style/Widget.GeoStamp.ReportQuickRow">
+        <ImageView style="@style/Widget.GeoStamp.ReportQuickIcon" android:src="@drawable/ic_share" />
+        <LinearLayout style="@style/Widget.GeoStamp.ReportQuickText">
+            <TextView android:text="@string/report_quick_last_email"
+                style="@style/Widget.GeoStamp.ReportQuickTitle" />
+            <TextView android:text="@string/report_quick_last_email_summary"
+                style="@style/Widget.GeoStamp.ReportQuickSummary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quickBrowse"
+        style="@style/Widget.GeoStamp.ReportQuickRow">
+        <ImageView style="@style/Widget.GeoStamp.ReportQuickIcon" android:src="@drawable/ic_templates" />
+        <LinearLayout style="@style/Widget.GeoStamp.ReportQuickText">
+            <TextView android:text="@string/report_quick_browse"
+                style="@style/Widget.GeoStamp.ReportQuickTitle" />
+            <TextView android:text="@string/report_quick_browse_summary"
+                style="@style/Widget.GeoStamp.ReportQuickSummary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quickRate"
+        style="@style/Widget.GeoStamp.ReportQuickRow">
+        <ImageView style="@style/Widget.GeoStamp.ReportQuickIcon" android:src="@drawable/ic_check" />
+        <LinearLayout style="@style/Widget.GeoStamp.ReportQuickText">
+            <TextView android:text="@string/report_quick_rate"
+                style="@style/Widget.GeoStamp.ReportQuickTitle" />
+            <TextView android:text="@string/report_action_rate_summary"
+                style="@style/Widget.GeoStamp.ReportQuickSummary" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnQuickBack"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_lg"
+        android:layout_marginTop="@dimen/spacing_sm"
+        android:text="@string/report_quick_back" />
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_lg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/timerOff" android:text="@string/camera_timer_off"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/timer3" android:text="@string/camera_timer_3s"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/timer10" android:text="@string/camera_timer_10s"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+</LinearLayout>

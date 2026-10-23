@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Internal: everything under /data/data/<pkg>/files -->
+    <files-path name="internal_root" path="." />
+    <files-path name="internal_photos" path="photos/" />
+    <files-path name="internal_reports" path="reports/" />
+    <files-path name="internal_logos" path="logos/" />
+    <files-path name="internal_videos" path="videos/" />
+
+    <!-- Internal cache -->
+    <cache-path name="internal_cache" path="." />
+
+    <!-- External app-specific files -->
+    <external-files-path name="external_root" path="." />
+    <external-files-path name="external_photos" path="photos/" />
+    <external-files-path name="external_reports" path="reports/" />
+
+    <!-- External cache -->
+    <external-cache-path name="external_cache" path="." />
+</paths>

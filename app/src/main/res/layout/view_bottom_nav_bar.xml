@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottom_nav_surface"
+    android:elevation="14dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="8dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- Row of 5 items, evenly weighted. clipChildren=false lets the center FAB
+         scale and glow beyond the row bounds. -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            style="@style/Widget.GeoStamp.BottomNavItem">
+            <FrameLayout
+                android:id="@+id/navHomePill"
+                style="@style/Widget.GeoStamp.BottomNavPill">
+                <ImageView
+                    android:id="@+id/navHomeIcon"
+                    style="@style/Widget.GeoStamp.BottomNavIcon"
+                    android:src="@drawable/ic_home"
+                    android:contentDescription="@string/nav_home" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/navHomeLabel"
+                style="@style/Widget.GeoStamp.BottomNavText"
+                android:text="@string/nav_home" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navGallery"
+            style="@style/Widget.GeoStamp.BottomNavItem">
+            <FrameLayout
+                android:id="@+id/navGalleryPill"
+                style="@style/Widget.GeoStamp.BottomNavPill">
+                <ImageView
+                    android:id="@+id/navGalleryIcon"
+                    style="@style/Widget.GeoStamp.BottomNavIcon"
+                    android:src="@drawable/ic_gallery"
+                    android:contentDescription="@string/nav_gallery" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/navGalleryLabel"
+                style="@style/Widget.GeoStamp.BottomNavText"
+                android:text="@string/nav_gallery" />
+        </LinearLayout>
+
+        <!-- Center camera slot — raised FAB-style always-lit button. Label is hidden
+             so the icon doesn't eat horizontal space from the other tabs. -->
+        <LinearLayout
+            android:id="@+id/navCamera"
+            style="@style/Widget.GeoStamp.BottomNavItem.Camera">
+            <FrameLayout
+                android:id="@+id/navCameraPill"
+                style="@style/Widget.GeoStamp.BottomNavPill.Camera">
+                <ImageView
+                    android:id="@+id/navCameraIcon"
+                    style="@style/Widget.GeoStamp.BottomNavIcon.Camera"
+                    android:src="@drawable/ic_camera"
+                    android:contentDescription="@string/nav_camera" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/navCameraLabel"
+                style="@style/Widget.GeoStamp.BottomNavText"
+                android:text="@string/nav_camera"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navMap"
+            style="@style/Widget.GeoStamp.BottomNavItem">
+            <FrameLayout
+                android:id="@+id/navMapPill"
+                style="@style/Widget.GeoStamp.BottomNavPill">
+                <ImageView
+                    android:id="@+id/navMapIcon"
+                    style="@style/Widget.GeoStamp.BottomNavIcon"
+                    android:src="@drawable/ic_map"
+                    android:contentDescription="@string/nav_map" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/navMapLabel"
+                style="@style/Widget.GeoStamp.BottomNavText"
+                android:text="@string/nav_map" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navTemplates"
+            style="@style/Widget.GeoStamp.BottomNavItem">
+            <FrameLayout
+                android:id="@+id/navTemplatesPill"
+                style="@style/Widget.GeoStamp.BottomNavPill">
+                <ImageView
+                    android:id="@+id/navTemplatesIcon"
+                    style="@style/Widget.GeoStamp.BottomNavIcon"
+                    android:src="@drawable/ic_templates"
+                    android:contentDescription="@string/nav_templates" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/navTemplatesLabel"
+                style="@style/Widget.GeoStamp.BottomNavText"
+                android:text="@string/nav_templates" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

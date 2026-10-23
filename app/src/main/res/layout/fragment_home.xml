@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_lg"
+            android:paddingEnd="@dimen/spacing_lg"
+            android:paddingTop="@dimen/spacing_lg"
+            android:paddingBottom="@dimen/spacing_xxl">
+
+            <!-- ===== Top title ===== -->
+            <LinearLayout
+                android:id="@+id/homeHeaderRow"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/homeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textAppearance="@style/TextAppearance.GeoStamp.Display"
+                        android:textStyle="bold"
+                        android:letterSpacing="-0.02" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_tagline"
+                        android:layout_marginTop="@dimen/spacing_xxs"
+                        android:textAppearance="@style/TextAppearance.GeoStamp.Body"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===== Hero gradient card with decorative glows ===== -->
+            <FrameLayout
+                android:id="@+id/heroPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:background="@drawable/bg_hero_gradient"
+                android:clipToOutline="true"
+                android:elevation="10dp">
+
+                <!-- Decorative glow blobs: positioned off-corner for depth -->
+                <View
+                    android:id="@+id/heroGlowTop"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginEnd="-60dp"
+                    android:layout_marginTop="-80dp"
+                    android:background="@drawable/bg_hero_glow_top"
+                    tools:ignore="UseAppTint" />
+
+                <View
+                    android:id="@+id/heroGlowBottom"
+                    android:layout_width="260dp"
+                    android:layout_height="260dp"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="-100dp"
+                    android:layout_marginBottom="-100dp"
+                    android:background="@drawable/bg_hero_glow_bottom" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_xl">
+
+                    <!-- Floating icon tile -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/heroIconTile"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardBackgroundColor="#40FFFFFF"
+                        app:cardElevation="0dp"
+                        app:strokeColor="#55FFFFFF"
+                        app:strokeWidth="1dp">
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_camera"
+                            android:tint="@color/white_pure"
+                            android:contentDescription="@null" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/heroTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:text="@string/home_hero_title"
+                        android:textColor="@color/white_pure"
+                        android:textAppearance="@style/TextAppearance.GeoStamp.Display"
+                        android:textStyle="bold"
+                        android:letterSpacing="-0.02" />
+
+                    <TextView
+                        android:id="@+id/heroSubtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="@string/home_hero_subtitle"
+                        android:textColor="#DDFFFFFF"
+                        android:textAppearance="@style/TextAppearance.GeoStamp.Body" />
+
+                    <!-- Gradient pill CTA: amber→orange→pink against the hero teal→violet.
+                         High elevation gives it a true floating feel. -->
+                    <FrameLayout
+                        android:id="@+id/openCameraButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:background="@drawable/bg_cta_sunset"
+                        android:clipToOutline="true"
+                        android:elevation="12dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?selectableItemBackground">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/spacing_xl"
+                            android:paddingEnd="@dimen/spacing_xl">
+
+                            <ImageView
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/ic_camera"
+                                android:tint="@color/white_pure"
+                                android:contentDescription="@null" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_sm"
+                                android:text="@string/home_open_camera"
+                                android:textColor="@color/white_pure"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:letterSpacing="0.02" />
+
+                            <Space
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/ic_arrow_right"
+                                android:tint="@color/white_pure"
+                                android:contentDescription="@null" />
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== Section: Last location ===== -->
+            <LinearLayout
+                android:id="@+id/lastLocationHeader"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:gravity="center_vertical">
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/bg_section_accent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:text="@string/home_last_location"
+                    android:textAppearance="@style/TextAppearance.GeoStamp.Title"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/lastLocationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:background="@drawable/bg_last_location_soft"
+                android:padding="@dimen/spacing_lg">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+                    <FrameLayout
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_shortcut_tile_teal">
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_location"
+                            android:tint="@color/white_pure"
+                            android:contentDescription="@null" />
+                    </FrameLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/spacing_md">
+                        <TextView
+                            android:id="@+id/lastLocationText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/common_loading"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.GeoStamp.Body" />
+                        <TextView
+                            android:id="@+id/lastLocationStale"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xxs"
+                            android:text="@string/home_last_location_stale"
+                            android:visibility="gone"
+                            android:textAppearance="@style/TextAppearance.GeoStamp.Caption"
+                            android:textColor="@color/warning_500" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== Section: Quick actions ===== -->
+            <LinearLayout
+                android:id="@+id/shortcutsHeader"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:gravity="center_vertical">
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/bg_section_accent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:text="@string/home_section_shortcuts"
+                    android:textAppearance="@style/TextAppearance.GeoStamp.Title"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shortcutsRow"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:weightSum="4">
+                <include android:id="@+id/shortcutGallery" layout="@layout/view_home_shortcut" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <include android:id="@+id/shortcutMap" layout="@layout/view_home_shortcut" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <include android:id="@+id/shortcutQr" layout="@layout/view_home_shortcut" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <include android:id="@+id/shortcutSettings" layout="@layout/view_home_shortcut" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            </LinearLayout>
+
+            <!-- ===== Section: Quick templates ===== -->
+            <LinearLayout
+                android:id="@+id/templatesHeader"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:gravity="center_vertical">
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/bg_section_accent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:text="@string/home_quick_templates"
+                    android:textAppearance="@style/TextAppearance.GeoStamp.Title"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homeTemplatesList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:clipToPadding="false"
+                android:paddingEnd="@dimen/spacing_lg"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <!-- ===== Section: Recent photos ===== -->
+            <LinearLayout
+                android:id="@+id/recentHeader"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:gravity="center_vertical">
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/bg_section_accent" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/spacing_sm"
+                    android:text="@string/home_recent_photos"
+                    android:textAppearance="@style/TextAppearance.GeoStamp.Title"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/seeAllPhotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_sm"
+                    android:text="@string/home_see_all"
+                    android:textColor="@color/brand_primary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homeRecentList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/homeRecentEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/spacing_lg"
+                android:text="@string/gallery_empty_title"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/view_ad_container" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Selected: same brand teal as the icon so icon + text read as one unit -->
+    <item android:state_checked="true" android:color="?attr/colorPrimary" />
+    <!-- Unselected: adaptive legible gray -->
+    <item android:color="?attr/colorOnSurfaceVariant" />
+</selector>

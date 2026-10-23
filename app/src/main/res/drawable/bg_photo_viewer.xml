@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Deep radial gradient so the photo pops; stays legible in both themes -->
+    <gradient
+        android:type="radial"
+        android:gradientRadius="640dp"
+        android:centerColor="#1A2130"
+        android:startColor="#293041"
+        android:endColor="#0A0E13" />
+</shape>
