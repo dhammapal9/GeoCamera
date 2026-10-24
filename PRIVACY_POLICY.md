@@ -1,8 +1,8 @@
-# GeoStamp Camera — Privacy Policy
+# GPS Map Camera - GeoTag — Privacy Policy
 
 **Last updated:** 2026-10-14
 
-GeoStamp Camera is designed to run locally on your Android device and to keep the data it collects on that device.
+GPS Map Camera - GeoTag is designed to run locally on your Android device and to keep the data it collects on that device.
 
 ## Data we handle
 

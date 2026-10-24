@@ -90,7 +90,7 @@ class TemplateRepository @Inject constructor(
             showWeather = false,
             showLogo = false,
             showNote = true,
-            note = "Captured by GeoStamp Camera",
+            note = "Captured by GPS Map Camera - GeoTag",
             hashtag = "",
             projectName = "",
             businessName = "",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GeoStamp Camera</string>
+    <string name="app_name">GPS Map Camera - GeoTag</string>
     <string name="app_tagline">Fiable. Précis. Authentique.</string>
     <string name="common_ok">OK</string>
     <string name="common_cancel">Annuler</string>
@@ -120,7 +120,7 @@
     <string name="report_action_view_summary">Review the capture and metadata</string>
     <string name="report_action_dismiss">Terminé</string>
     <string name="report_subject_prefix">Site report</string>
-    <string name="report_email_body">Attached photo captured by GeoStamp Camera.\n\n%1$s\n\nCoordinates: %2$s\nCaptured: %3$s</string>
+    <string name="report_email_body">Attached photo captured by GPS Map Camera - GeoTag.\n\n%1$s\n\nCoordinates: %2$s\nCaptured: %3$s</string>
     <string name="report_generating">Preparing PDF…</string>
     <string name="report_pdf_failed">Could not generate PDF report</string>
     <string name="report_form_title">Nouveau rapport de site</string>
@@ -211,7 +211,7 @@
     <string name="settings_more_apps">Plus d\'applications</string>
     <string name="settings_go_premium">Passer à Premium</string>
     <string name="settings_youre_premium">Vous êtes Premium</string>
-    <string name="perm_camera_rationale">GeoStamp Camera utilise votre appareil photo pour prendre des photos et ajouter le tampon GPS.</string>
+    <string name="perm_camera_rationale">GPS Map Camera - GeoTag utilise votre appareil photo pour prendre des photos et ajouter le tampon GPS.</string>
     <string name="perm_location_rationale">Nous appliquons la latitude, la longitude, l\'adresse et la carte sur votre photo.</string>
     <string name="perm_screen_title">Activez les autorisations requises</string>
     <string name="perm_screen_body">Pour capturer des photos avec tampons GPS, nous avons besoin de l\'accès à votre appareil photo et votre localisation.</string>
@@ -385,9 +385,9 @@
     <string name="field_pluscode">Plus Code</string>
     <string name="field_heading">Heading</string>
     <string name="field_magnetic">Magnetic</string>
-    <string name="field_captured_by">Captured by GeoStamp Camera</string>
+    <string name="field_captured_by">Captured by GPS Map Camera - GeoTag</string>
     <string name="field_note">Note</string>
-    <string name="privacy_policy_body">GeoStamp Camera is designed with privacy as a core principle.\n\nLocation data: We request camera and GPS access only to overlay location details onto photos you capture. Location is used in-app and is never uploaded to any developer server.\n\nPhotos: All captures and originals stay on your device, under your control. We never transmit your photos to our servers.\n\nExternal services: Reverse geocoding, map tiles and optional weather data require internet access. These third-party services receive only the coordinates necessary to answer the request.\n\nAdvertising: If AdMob is enabled, Google may collect device identifiers subject to their policies. You can disable personalized ads from Google settings.\n\nData deletion: Uninstalling the app removes all local data. You can also delete individual photos from the Gallery.\n\nContact: file an issue on the project page if you have questions.</string>
+    <string name="privacy_policy_body">GPS Map Camera - GeoTag is designed with privacy as a core principle.\n\nLocation data: We request camera and GPS access only to overlay location details onto photos you capture. Location is used in-app and is never uploaded to any developer server.\n\nPhotos: All captures and originals stay on your device, under your control. We never transmit your photos to our servers.\n\nExternal services: Reverse geocoding, map tiles and optional weather data require internet access. These third-party services receive only the coordinates necessary to answer the request.\n\nAdvertising: If AdMob is enabled, Google may collect device identifiers subject to their policies. You can disable personalized ads from Google settings.\n\nData deletion: Uninstalling the app removes all local data. You can also delete individual photos from the Gallery.\n\nContact: file an issue on the project page if you have questions.</string>
     <string name="help_body">Grant camera and location permissions, pick a template on the Camera screen, and tap the shutter. Your photo will be saved to the Gallery with the stamp applied.\n\nTemplates can be customised from the Templates screen. The Advance template exposes the most fields.\n\nIf GPS is unavailable, you can set a manual location from the Camera screen before capturing.</string>
     <string name="cd_logo">Logo</string>
     <string name="cd_map_thumbnail">Map thumbnail</string>

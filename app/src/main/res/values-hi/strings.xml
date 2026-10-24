@@ -100,7 +100,7 @@
     <string name="report_action_view_summary">कैप्चर और मेटाडेटा की समीक्षा करें</string>
     <string name="report_action_dismiss">पूर्ण</string>
     <string name="report_subject_prefix">साइट रिपोर्ट</string>
-    <string name="report_email_body">GeoStamp Camera द्वारा कैप्चर की गई संलग्न फोटो।\n\n%1$s\n\nनिर्देशांक: %2$s\nकैप्चर किया गया: %3$s</string>
+    <string name="report_email_body">GPS Map Camera - GeoTag द्वारा कैप्चर की गई संलग्न फोटो।\n\n%1$s\n\nनिर्देशांक: %2$s\nकैप्चर किया गया: %3$s</string>
     <string name="report_generating">पीडीएफ तैयार की जा रही है…</string>
     <string name="report_pdf_failed">पीडीएफ रिपोर्ट तैयार नहीं की जा सकी</string>
     <string name="report_form_title">नई साइट रिपोर्ट</string>
@@ -190,7 +190,7 @@
     <string name="settings_more_apps">अधिक ऐप्स</string>
     <string name="settings_go_premium">प्रीमियम प्राप्त करें</string>
     <string name="perm_camera_title">कैमरा एक्सेस आवश्यक है</string>
-    <string name="perm_camera_rationale">GeoStamp Camera फोटो लेने और जीपीएस स्टाम्प लगाने के लिए आपके कैमरे का उपयोग करता है।</string>
+    <string name="perm_camera_rationale">GPS Map Camera - GeoTag फोटो लेने और जीपीएस स्टाम्प लगाने के लिए आपके कैमरे का उपयोग करता है।</string>
     <string name="perm_location_title">स्थान पहुंच की अनुमति दें</string>
     <string name="perm_location_rationale">हम आपके स्थान का उपयोग करके फोटो पर अक्षांश, देशांतर, पता और मैप स्टाम्प करते हैं।</string>
     <string name="perm_screen_title">आवश्यक अनुमतियां सक्षम करें</string>
@@ -385,9 +385,9 @@
     <string name="field_pluscode">Plus Code</string>
     <string name="field_heading">Heading</string>
     <string name="field_magnetic">Magnetic</string>
-    <string name="field_captured_by">Captured by GeoStamp Camera</string>
+    <string name="field_captured_by">Captured by GPS Map Camera - GeoTag</string>
     <string name="field_note">नोट</string>
-    <string name="privacy_policy_body">GeoStamp Camera is designed with privacy as a core principle.\n\nLocation data: We request camera and GPS access only to overlay location details onto photos you capture. Location is used in-app and is never uploaded to any developer server.\n\nPhotos: All captures and originals stay on your device, under your control. We never transmit your photos to our servers.\n\nExternal services: Reverse geocoding, map tiles and optional weather data require internet access. These third-party services receive only the coordinates necessary to answer the request.\n\nAdvertising: If AdMob is enabled, Google may collect device identifiers subject to their policies. You can disable personalized ads from Google settings.\n\nData deletion: Uninstalling the app removes all local data. You can also delete individual photos from the Gallery.\n\nContact: file an issue on the project page if you have questions.</string>
+    <string name="privacy_policy_body">GPS Map Camera - GeoTag is designed with privacy as a core principle.\n\nLocation data: We request camera and GPS access only to overlay location details onto photos you capture. Location is used in-app and is never uploaded to any developer server.\n\nPhotos: All captures and originals stay on your device, under your control. We never transmit your photos to our servers.\n\nExternal services: Reverse geocoding, map tiles and optional weather data require internet access. These third-party services receive only the coordinates necessary to answer the request.\n\nAdvertising: If AdMob is enabled, Google may collect device identifiers subject to their policies. You can disable personalized ads from Google settings.\n\nData deletion: Uninstalling the app removes all local data. You can also delete individual photos from the Gallery.\n\nContact: file an issue on the project page if you have questions.</string>
     <string name="help_body">Grant camera and location permissions, pick a template on the Camera screen, and tap the shutter. Your photo will be saved to the Gallery with the stamp applied.\n\nTemplates can be customised from the Templates screen. The Advance template exposes the most fields.\n\nIf GPS is unavailable, you can set a manual location from the Camera screen before capturing.</string>
     <string name="cd_logo">Logo</string>
     <string name="cd_map_thumbnail">Map thumbnail</string>

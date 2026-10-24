@@ -1,4 +1,4 @@
-# GeoStamp Camera
+# GPS Map Camera - GeoTag
 
 Android app (Kotlin + XML, Material 3) that captures photos and permanently stamps GPS coordinates, address, timestamp, map thumbnail, weather and sensor data onto the final JPEG.
 

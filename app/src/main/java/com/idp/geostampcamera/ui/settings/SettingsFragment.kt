@@ -236,7 +236,7 @@ class SettingsFragment : Fragment() {
         val pkg = requireContext().packageName
         val send = Intent(Intent.ACTION_SEND).apply {
             type = "text/plain"
-            putExtra(Intent.EXTRA_TEXT, "Check out GeoStamp Camera: https://play.google.com/store/apps/details?id=$pkg")
+            putExtra(Intent.EXTRA_TEXT, "Check out GPS Map Camera - GeoTag: https://play.google.com/store/apps/details?id=$pkg")
         }
         startActivity(Intent.createChooser(send, getString(R.string.settings_share_app)))
     }

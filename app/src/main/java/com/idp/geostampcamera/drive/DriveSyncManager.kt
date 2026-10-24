@@ -48,7 +48,7 @@ class DriveSyncManager @Inject constructor(
         data class Failure(val message: String) : Result()
     }
 
-    /** Uploads [stampedFile] into the "GeoStamp Camera" folder of the signed-in account. */
+    /** Uploads [stampedFile] into the "GPS Map Camera - GeoTag" folder of the signed-in account. */
     suspend fun upload(stampedFile: File): Result = withContext(Dispatchers.IO) {
         val email = settings.driveAccountEmailFlow().first()
             ?: return@withContext Result.NotConnected
@@ -184,6 +184,6 @@ class DriveSyncManager @Inject constructor(
 
     companion object {
         const val OAUTH_SCOPE = "oauth2:https://www.googleapis.com/auth/drive.file"
-        const val FOLDER_NAME = "GeoStamp Camera"
+        const val FOLDER_NAME = "GPS Map Camera - GeoTag"
     }
 }
