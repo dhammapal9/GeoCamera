@@ -146,13 +146,6 @@
     <string name="report_quick_rate">معدل على متجر Play</string>
     <string name="report_quick_back">العودة إلى وضع الصورة</string>
     <string name="report_no_last">لم يتم التقاط أي تقرير في هذه الجلسة حتى الآن.</string>
-    <string name="admob_app_id">كاليفورنيا-التطبيق-حانة-3940256099942544~3347511713</string>
-    <string name="admob_banner">كاليفورنيا-التطبيق-حانة-3940256099942544/6300978111</string>
-    <string name="admob_interstitial">كاليفورنيا-التطبيق-حانة-3940256099942544/1033173712</string>
-    <string name="admob_rewarded">كاليفورنيا-التطبيق-حانة-3940256099942544/5224354917</string>
-    <string name="admob_rewarded_interstitial">كاليفورنيا-التطبيق-حانة-3940256099942544/5354046379</string>
-    <string name="admob_native">كاليفورنيا-التطبيق-حانة-3940256099942544/2247696110</string>
-    <string name="admob_app_open">كاليفورنيا-التطبيق-حانة-3940256099942544/9257395921</string>
     <string name="ad_loading">جارٍ تحميل الإعلان…</string>
     <string name="ad_label">برعاية</string>
     <string name="ad_unlock_reward">شاهد إعلانًا قصيرًا لفتح تقرير PDF</string>

@@ -142,13 +142,6 @@
     <string name="report_quick_rate">Ohodnoťte v Obchodě Play</string>
     <string name="report_quick_back">Back to photo mode</string>
     <string name="report_no_last">No report captured in this session yet.</string>
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_banner">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_rewarded">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="admob_rewarded_interstitial">ca-app-pub-3940256099942544/5354046379</string>
-    <string name="admob_native">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="admob_app_open">ca-app-pub-3940256099942544/9257395921</string>
     <string name="ad_loading">Ad loading…</string>
     <string name="ad_label">Sponsored</string>
     <string name="ad_unlock_reward">Watch a short ad to unlock the PDF report</string>

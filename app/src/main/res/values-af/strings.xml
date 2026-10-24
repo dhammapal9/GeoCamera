@@ -139,13 +139,6 @@
     <string name="report_quick_rate">Beoordeel op Play Winkel</string>
     <string name="report_quick_back">Terug na fotomodus</string>
     <string name="report_no_last">Geen verslag is nog in hierdie sessie vasgelê nie.</string>
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_banner">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_rewarded">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="admob_rewarded_interstitial">ca-app-pub-3940256099942544/5354046379</string>
-    <string name="admob_native">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="admob_app_open">ca-app-pub-3940256099942544/9257395921</string>
     <string name="ad_loading">Advertensie laai …</string>
     <string name="ad_label">Geborg</string>
     <string name="ad_unlock_reward">Kyk na \'n kort advertensie om die PDF-verslag te ontsluit</string>

@@ -272,13 +272,6 @@
     <string name="error_camera_unavailable">इस डिवाइस पर कैमरा अनुपलब्ध है।</string>
     <string name="error_location_disabled">स्थान सेवाएं बंद हैं।</string>
     <string name="error_permission_denied">अनुमति अस्वीकृत।</string>
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_banner">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="admob_rewarded">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="admob_rewarded_interstitial">ca-app-pub-3940256099942544/5354046379</string>
-    <string name="admob_native">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="admob_app_open">ca-app-pub-3940256099942544/9257395921</string>
     <string name="settings_storage_location">स्टोरेज स्थान</string>
     <string name="settings_youre_premium">आप प्रीमियम हैं</string>
     <string name="template_default_minimal">न्यूनतम</string>

@@ -1,5 +1,3 @@
-import java.util.Properties
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -9,30 +7,19 @@ plugins {
     kotlin("kapt")
 }
 
-val localProps = Properties().apply {
-    val f = rootProject.file("local.properties")
-    if (f.exists()) load(f.inputStream())
-}
-val mapsApiKey: String = localProps.getProperty("MAPS_API_KEY") ?: ""
-val admobAppId: String = localProps.getProperty("ADMOB_APP_ID")
-    ?: "ca-app-pub-3940256099942544~3347511713" // AdMob test App ID
-
 android {
     namespace = "com.idp.geostampcamera"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.idp.geostampcamera"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 37
         versionCode = 1
-        versionName = "1.0.0"
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables { useSupportLibrary = true }
-
-        manifestPlaceholders["MAPS_API_KEY"] = mapsApiKey
-        manifestPlaceholders["ADMOB_APP_ID"] = admobAppId
     }
 
     buildTypes {

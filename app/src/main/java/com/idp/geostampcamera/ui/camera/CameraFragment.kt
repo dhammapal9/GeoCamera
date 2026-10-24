@@ -90,7 +90,9 @@ class CameraFragment : Fragment() {
         bindZoomPills()
         bindModeSelector()
         applyEdgeToEdgeInsets()
-        startWidgetRotationListener()
+        // Camera is pinned to portrait in onResume and no element should animate on device
+        // rotation — the orientation listener used to translate/rotate stampPreview + zoomGroup
+        // is intentionally not started here.
         installCameraBanner()
         if (PermissionUtils.hasCamera(requireContext())) startCameraIfReady()
         else showPermissionRationale()

@@ -139,13 +139,6 @@
     <string name="report_quick_rate">প্লে ষ্ট\'ৰত ৰেট কৰক</string>
     <string name="report_quick_back">Back to photo mode</string>
     <string name="report_no_last">এই অধিবেশনত এতিয়াও কোনো প্ৰতিবেদন ধৰা পৰা নাই।</string>
-    <string name="admob_app_id">ca-app-pub-৩৯৪০২৫৬০৯৯৯৪২৫৪৪~৩৩৪৭৫১১৭১৩</string>
-    <string name="admob_banner">ca-app-pub-৩৯৪০২৫৬০৯৯৯৪২৫৪৪/৬৩০০৯৭৮১১১</string>
-    <string name="admob_interstitial">ca-app-pub-৩৯৪০২৫৬০৯৯৯৪২৫৪৪/১০৩৩১৭৩৭১২</string>
-    <string name="admob_rewarded">ca-app-pub-৩৯৪০২৫৬০৯৯৯৪২৫৪৪/৫২২৪৩৫৪৯১৭</string>
-    <string name="admob_rewarded_interstitial">ca-app-pub-3940256099942544/5354046379</string>
-    <string name="admob_native">ca-app-pub-3940256099942544/2247696110</string>
-    <string name="admob_app_open">ca-app-pub-3940256099942544/9257395921</string>
     <string name="ad_loading">বিজ্ঞাপন লোডিং...</string>
     <string name="ad_label">Sponsored</string>
     <string name="ad_unlock_reward">Watch a short ad to unlock the PDF report</string>

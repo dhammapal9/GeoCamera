@@ -392,15 +392,19 @@ class SettingsViewModel @Inject constructor(
                 iconRes = R.drawable.ic_report)
         )
         val driveConnected = storageLocation == SettingsRepository.STORAGE_DRIVE && !driveAccountEmail.isNullOrBlank()
+        // Short right-side badge: "Phone storage" / "Connected" / "Not connected".
         val storageValueLabel = when {
             storageLocation != SettingsRepository.STORAGE_DRIVE -> s(R.string.settings_storage_phone)
-            driveConnected -> localizedCtx.getString(R.string.settings_storage_drive_connected_as, driveAccountEmail)
+            driveConnected -> s(R.string.settings_storage_drive_connected)
             else -> s(R.string.settings_storage_drive_status)
         }
+        // Full email goes underneath the title in the summary slot (two-line, ellipsised).
+        val storageSummary = if (driveConnected) driveAccountEmail else null
         val storageRows = listOf(
             SettingsRow(id = SettingsAction.STORAGE_LOCATION, title = s(R.string.settings_storage_location),
                 iconRes = R.drawable.ic_gallery,
                 valueLabel = storageValueLabel,
+                summary = storageSummary,
                 choices = listOf(
                     SettingsRepository.STORAGE_PHONE to s(R.string.settings_storage_phone),
                     SettingsRepository.STORAGE_DRIVE to s(R.string.settings_storage_drive)

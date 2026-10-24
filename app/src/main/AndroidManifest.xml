@@ -46,16 +46,15 @@
             </intent-filter>
         </activity>
 
-        <!-- Google Maps SDK API key (placeholder) -->
+        <!-- Google Maps SDK API key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="@string/maps_api_key" />
 
-        <!-- AdMob App ID. The manifest placeholder lets you override via local.properties;
-             falls back to the string resource (which defaults to Google's test id). -->
+        <!-- AdMob App ID read from string resource -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="${ADMOB_APP_ID}" />
+            android:value="@string/admob_app_id" />
         <!-- Keep ads working when Play Services detects an older/broken version -->
         <meta-data
             android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"

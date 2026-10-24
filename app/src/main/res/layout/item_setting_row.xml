@@ -28,11 +28,15 @@
                 android:id="@+id/settingTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textAppearance="@style/TextAppearance.GeoStamp.Body" />
             <TextView
                 android:id="@+id/settingSummary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:textAppearance="@style/TextAppearance.GeoStamp.Caption"
                 android:textColor="?attr/colorOnSurfaceVariant" />
         </LinearLayout>
@@ -40,6 +44,11 @@
             android:id="@+id/settingValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxWidth="140dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:layout_marginStart="@dimen/spacing_sm"
             android:textColor="?attr/colorOnSurfaceVariant"
             android:textAppearance="@style/TextAppearance.GeoStamp.Caption" />
         <com.google.android.material.materialswitch.MaterialSwitch
