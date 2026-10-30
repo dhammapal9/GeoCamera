@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -52,6 +54,28 @@ class OnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Onboarding is a fullscreen destination (bottom nav hidden), so the ad container
+        // is constraint-anchored to the parent bottom. Pad the root for the system nav bar
+        // so the ad sits above the gesture/3-button bar on edge-to-edge Android 15+.
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(v.paddingLeft, v.paddingTop, v.paddingRight, bars.bottom)
+            insets
+        }
+        // Apply synchronously too — the parent activity consumed the initial inset dispatch
+        // before this fragment attached, so the listener alone would not fire until the next
+        // config change and the ad would overlap the nav bar on first launch.
+        ViewCompat.getRootWindowInsets(binding.root)?.let { insets ->
+            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            binding.root.setPadding(
+                binding.root.paddingLeft,
+                binding.root.paddingTop,
+                binding.root.paddingRight,
+                bars.bottom
+            )
+        }
+        ViewCompat.requestApplyInsets(binding.root)
+
         binding.onboardingPager.adapter = Adapter()
         binding.onboardingPager.offscreenPageLimit = 1
         binding.onboardingPager.setPageTransformer(HeroParallaxTransformer())

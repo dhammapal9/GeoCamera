@@ -216,11 +216,19 @@ class SettingsFragment : Fragment() {
     }
 
     private fun showPrivacyPolicy() {
-        MaterialAlertDialogBuilder(requireContext())
-            .setTitle(R.string.settings_privacy_policy)
-            .setMessage(getString(R.string.privacy_policy_body))
-            .setPositiveButton(R.string.common_ok, null)
-            .show()
+        val url = getString(R.string.privacy_policy_url)
+        try {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url)).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            startActivity(intent)
+        } catch (_: Exception) {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.settings_privacy_policy)
+                .setMessage(getString(R.string.privacy_policy_body))
+                .setPositiveButton(R.string.common_ok, null)
+                .show()
+        }
     }
 
     private fun openPlayStore() {
@@ -243,7 +251,7 @@ class SettingsFragment : Fragment() {
 
     private fun openMoreApps() {
         startActivity(
-            Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:GeoStamp")).apply {
+            Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:IDP Tech")).apply {
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
         )

@@ -1,3 +1,8 @@
+# Workaround for R8 ConcurrentModificationException on AGP 8.5.x
+# (Google issue 346049345). Shrinking and obfuscation still run; only the
+# aggressive optimization pass that trips the CME is turned off.
+-dontoptimize
+
 # Keep model classes used by Moshi
 -keep class com.idp.geostampcamera.data.remote.** { *; }
 -keep class com.idp.geostampcamera.domain.model.** { *; }

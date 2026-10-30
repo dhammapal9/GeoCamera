@@ -57,14 +57,26 @@ class MainActivity : AppCompatActivity() {
             val fullScreen = destination.id == R.id.cameraFragment ||
                 destination.id == R.id.qrFragment ||
                 destination.id == R.id.photoViewerFragment ||
-                destination.id == R.id.onboardingFragment
+                destination.id == R.id.onboardingFragment ||
+                destination.id == R.id.helpFragment
             bottomNav.visibility = if (fullScreen) View.GONE else View.VISIBLE
             if (!fullScreen) highlightSlot(destination.id)
         }
 
+        // Preserve the designer-set bottomNav paddingBottom (8dp) and add the system nav
+        // bar inset on top of it. targetSdk 37 forces edge-to-edge on Android 15+, so without
+        // this the custom bottom nav draws underneath the gesture/3-button bar.
+        val bottomNavView = bottomNav
+        val bottomNavOriginalPaddingBottom = bottomNavView.paddingBottom
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(0, bars.top, 0, 0)
+            bottomNavView.setPadding(
+                bottomNavView.paddingLeft,
+                bottomNavView.paddingTop,
+                bottomNavView.paddingRight,
+                bottomNavOriginalPaddingBottom + bars.bottom
+            )
             insets
         }
         lifecycleScope.launch {

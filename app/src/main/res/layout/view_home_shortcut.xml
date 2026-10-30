@@ -19,8 +19,8 @@
         android:gravity="center"
         android:paddingTop="@dimen/spacing_lg"
         android:paddingBottom="@dimen/spacing_lg"
-        android:paddingStart="@dimen/spacing_sm"
-        android:paddingEnd="@dimen/spacing_sm">
+        android:paddingStart="@dimen/spacing_xs"
+        android:paddingEnd="@dimen/spacing_xs">
 
         <FrameLayout
             android:id="@+id/shortcutTile"
@@ -39,9 +39,10 @@
 
         <TextView
             android:id="@+id/shortcutLabel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_md"
+            android:gravity="center"
             android:textAppearance="@style/TextAppearance.GeoStamp.Caption"
             android:textStyle="bold"
             android:text="@string/home_shortcut_gallery" />
